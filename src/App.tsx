@@ -4,11 +4,17 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import './App.css';
 import Card from './components/Card.tsx';
 import Postcard from './components/Postcard.tsx';
+import Testimonial from './components/Testimonial.tsx';
 import yellowEgg from './images/yellowEgg.jpg'
 import pinkGlass from './images/pinkGlass.png'
 
 import cherries from './images/cherries.jpg'
 import orange from './images/orange.jpg'
+
+import milkBottles from './images/milkBottles.jpg'
+import halfOrange from './images/halfOrange.jpg'
+import cone from './images/cone.jpg'
+import sugarCubes from './images/sugarCubes.jpg'
 
 function App() {
 
@@ -33,6 +39,30 @@ image: cherries
 paragraph: "Increase your credibility by getting the most stunning, high-quality photos that improve your business image.",
 image: orange
 }
+]
+
+const testimonialsProps = [
+  {
+    icon: "",
+    review: "We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.",
+    name: "Emily R.",
+    jobTitle: "Marketing Director"
+
+  },
+  {
+    icon: "",
+    review: "Sunnyside's enthusiasm coupled with their keen interest in our brand's success made it a satisfying and enjoyable experience.",
+    name: "Thomas S.",
+    jobTitle: "Chief Operating Officer"
+
+  },
+  {
+    icon: "",
+    review: "Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!",
+    name: "Jennie F.",
+    jobTitle: "Business Owner"
+
+  }
 ]
 
 
@@ -72,17 +102,38 @@ image: orange
           <Card cardProps={cardProps}/>
         )
 
-      })
+        })
 
       }
-      {postcardsProps.map(postcardProps => {
-        return (
-          <Postcard postcardProps={postcardProps}/>
-        )
+      <div className="row"> 
+        {postcardsProps.map(postcardProps => {
+          return (
+            <Postcard postcardProps={postcardProps}/>
+          )
 
-      })
+          })
 
-      }
+        }
+      </div>
+
+      <div className="row"> 
+        {testimonialsProps.map(testimonialProps => {
+          return (
+            <Testimonial testimonialProps={testimonialProps}/>
+          )
+
+          })
+
+        }
+      </div>
+      <div>
+        <img src={milkBottles} alt="..."/> 
+        <img src={halfOrange} alt="..." />
+        <img src={cone} alt="..." />
+        <img src={sugarCubes} alt="..." />
+
+      </div>
+      
       
       
     </Router>
